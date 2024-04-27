@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parque Infantil em WebXR</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene vr-mode-ui="enabled: false">
+        <!-- Câmera -->
+        <a-entity camera position="0 2 0" look-controls wasd-controls></a-entity>
+        
+        <!--chão--> 
+        <a-plane material="src: #chão;
+                            repeat: 4 4;
+                             normal-map: #chão-nrm;
+                             normal-texture-repeat:4 4"
+                    rotation="-90 0 0"
+                    scale="10 10 1">
+                </a-plane>
+
+        <!-- Cenário -->
+        <a-sky color="#87CEEB"></a-sky> <!-- Azul claro -->
+        
+        <!-- montanha Russa -->
+        <a-entity gltf-model="Objectos3D/montanha_russa/scene.gltf" position="-3 0 -5" scale="1 1 1" rotation="0 90 0"></a-entity>
+        
+        <!-- Parque de estacionamento -->
+        <a-entity gltf-model="Objectos3D/VEICULOS/scene.gltf" position="0 0 -5" scale="2 2 2" rotation="0 180 0"></a-entity>
+        
+        <!-- Carrossel -->
+        <a-entity gltf-model="url(models/carousel.glb)" position="3 0 -5" scale="0.05 0.05 0.05"></a-entity>
+    </a-scene>
+</body>
+</html>
